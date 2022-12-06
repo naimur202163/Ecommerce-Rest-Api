@@ -22,6 +22,7 @@ app.get("/api/test", () => {
 
 app.use("/api/user", userRoute);
 
+
 app.listen(process.env.PORT || 4000, () => {
   console.log(`The Server is running on port 4000`);
 });
