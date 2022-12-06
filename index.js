@@ -7,8 +7,6 @@ const userRoute = require("./routes/user");
 const authRoute=require("./routes/auth");
 dotenv.config();
 
-// Middleware
-app.use(express.json());
 
 // Database Connection
 mongoose
@@ -19,12 +17,13 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+// Middleware
+app.use(express.json());
 
 // All Routes
 app.get("/api/test", () => {
   console.log("Test Is successfull");
 });
-
 app.use("/api/user", userRoute);
 app.use("/api/auth",authRoute)
 
